@@ -1,12 +1,19 @@
 import { Mail, FileText, ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { GithubIcon, LinkedinIcon, HashnodeIcon } from "@/components/icons";
+import {
+  GithubIcon,
+  XIcon,
+  YoutubeIcon,
+  LinkedinIcon,
+  InstagramIcon,
+  HashnodeIcon,
+} from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="contact" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
         <h2 className="font-mono text-sm sm:text-base uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-bold">
           Contact
@@ -28,47 +35,80 @@ export function ContactSection() {
           </p>
         </div>
 
-        {/* Social channels */}
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        {/* Social channels (Minimal icon style matching reference) */}
+        <div className="flex items-center justify-center gap-6 text-zinc-600 dark:text-zinc-400 pt-1">
           <a
             href="https://github.com/VanshWagh"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/80 px-4 py-2.5 text-sm font-semibold text-zinc-800 dark:text-zinc-200 transition-all hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white shadow-sm"
+            title="GitHub"
+            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
             id="contact-github"
           >
-            <GithubIcon className="h-4 w-4" />
-            <span>GitHub</span>
+            <GithubIcon className="h-6 w-6" />
           </a>
           <a
-            href="https://linkedin.com/in/vanshwagh"
+            href="https://x.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+            title="X"
+            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
+            id="contact-x"
+          >
+            <XIcon className="h-5 w-5" />
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            title="YouTube"
+            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
+            id="contact-youtube"
+          >
+            <YoutubeIcon className="h-6 w-6" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/vansh-wagh-93a8b6254/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/80 px-4 py-2.5 text-sm font-semibold text-zinc-800 dark:text-zinc-200 transition-all hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white shadow-sm"
+            title="LinkedIn"
+            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
             id="contact-linkedin"
           >
-            <LinkedinIcon className="h-4 w-4" />
-            <span>LinkedIn</span>
+            <LinkedinIcon className="h-6 w-6" />
           </a>
           <a
-            href="https://hashnode.com"
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            title="Instagram"
+            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
+            id="contact-instagram"
+          >
+            <InstagramIcon className="h-6 w-6" />
+          </a>
+          <a
+            href="https://hashnode.com/@vansh31"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Hashnode"
-            className="flex items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/80 px-4 py-2.5 text-sm font-semibold text-zinc-800 dark:text-zinc-200 transition-all hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white shadow-sm"
+            title="Hashnode"
+            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
             id="contact-hashnode"
           >
-            <HashnodeIcon className="h-4 w-4" />
-            <span>Hashnode</span>
+            <HashnodeIcon className="h-6 w-6" />
           </a>
         </div>
 
         {/* Email button & Resume */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
           <a
-            href="mailto:waghvansh@gmail.com"
+            href="mailto:waghvansh12@gmail.com"
             className={cn(
               buttonVariants({ variant: "default", size: "default" }),
               "gap-2 bg-indigo-600 text-white hover:bg-indigo-500 text-sm font-semibold shadow-md shadow-indigo-600/25 px-5 py-2.5"
@@ -76,7 +116,7 @@ export function ContactSection() {
             id="contact-email"
           >
             <Mail className="h-4 w-4" />
-            <span>waghvansh@gmail.com</span>
+            <span>waghvansh12@gmail.com</span>
             <ArrowUpRight className="h-4 w-4 opacity-75" />
           </a>
           <a

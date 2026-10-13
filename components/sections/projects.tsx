@@ -158,7 +158,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="projects" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <h2 className="font-mono text-sm sm:text-base uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-bold">

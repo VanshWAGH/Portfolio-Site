@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="experience" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
         <h2 className="font-mono text-sm sm:text-base uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-bold">
           Experience

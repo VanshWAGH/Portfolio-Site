@@ -8,9 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
   { label: "Writing", href: "#writing" },
-  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -53,14 +51,7 @@ export function Navbar() {
   };
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-b border-zinc-250 border-zinc-200/80 dark:border-zinc-800/80 shadow-sm"
-          : "bg-transparent border-b border-transparent"
-      )}
-    >
+    <nav className="relative w-full z-20 border-b border-zinc-200/60 dark:border-zinc-800/80 bg-[#fbf9f1]/70 dark:bg-zinc-950/60 backdrop-blur-sm transition-colors">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
         {/* Left: Brand Logo */}
         <a
@@ -72,7 +63,7 @@ export function Navbar() {
           className="group flex items-center gap-1.5 font-mono text-base font-bold text-zinc-950 dark:text-zinc-50 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
         >
           <span className="text-indigo-600 dark:text-indigo-400">~/</span>
-          <span>vansh wagh</span>
+          <span>VanshWAGH</span>
         </a>
 
         {/* Right Corner: Nav links + Theme Toggle */}

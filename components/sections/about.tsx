@@ -12,7 +12,7 @@ const designSteps = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="about" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
         <h2 className="font-mono text-sm sm:text-base uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-bold">
           About
@@ -49,25 +49,58 @@ export function AboutSection() {
         </blockquote>
       </div>
 
-      {/* System design approach */}
+      {/* System design approach - Horizontal moving strip */}
       <div className="flex flex-col gap-3 pt-3">
-        <h3 className="font-mono text-xs sm:text-sm uppercase tracking-wider text-zinc-900 dark:text-zinc-400 font-bold">
-          My Engineering Breakdown Process
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {designSteps.map((item) => (
-            <div
-              key={item.step}
-              className="group flex items-center gap-3.5 rounded-xl border border-zinc-250 border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 px-4 py-3 transition-all hover:border-zinc-400 dark:hover:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-900/80 shadow-sm"
-            >
-              <span className="font-mono text-sm font-bold text-indigo-700 dark:text-indigo-400">
-                {item.step}
-              </span>
-              <span className="text-sm sm:text-base text-zinc-900 dark:text-zinc-200 font-semibold">
-                {item.label}
-              </span>
-            </div>
-          ))}
+        <div className="flex items-center justify-between">
+          <h3 className="font-mono text-xs sm:text-sm uppercase tracking-wider text-zinc-900 dark:text-zinc-400 font-bold">
+            My Engineering Breakdown Process
+          </h3>
+          <span className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 hidden sm:inline-block">
+            Hover to pause
+          </span>
+        </div>
+
+        <div className="relative -mx-6 sm:-mx-8 overflow-hidden py-3 px-6 sm:px-8">
+          <style>{`
+            @keyframes engineeringMarquee {
+              0% {
+                transform: translate3d(0, 0, 0);
+              }
+              100% {
+                transform: translate3d(-50%, 0, 0);
+              }
+            }
+            .engineering-marquee-track {
+              display: flex !important;
+              width: max-content !important;
+              animation: engineeringMarquee 25s linear infinite !important;
+              will-change: transform;
+            }
+            .engineering-marquee-track:hover {
+              animation-play-state: paused !important;
+            }
+          `}</style>
+
+          {/* Left & Right gradient fade masks */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-r from-[#fbf9f1] dark:from-zinc-950 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-20 z-10 bg-gradient-to-l from-[#fbf9f1] dark:from-zinc-950 to-transparent" />
+
+          {/* Marquee Track */}
+          <div className="engineering-marquee-track flex items-center gap-3.5 sm:gap-4">
+            {[...designSteps, ...designSteps].map((item, idx) => (
+              <div
+                key={`${item.step}-${idx}`}
+                className="group flex items-center gap-3.5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/90 px-5 py-3 sm:px-6 sm:py-3.5 shadow-xs hover:shadow-md hover:border-indigo-400 dark:hover:border-indigo-500 hover:-translate-y-0.5 transition-all duration-200 shrink-0 cursor-default select-none"
+              >
+                <span className="font-mono text-sm sm:text-base font-bold text-indigo-600 dark:text-indigo-400 group-hover:scale-105 transition-transform">
+                  {item.step}
+                </span>
+                <span className="text-sm sm:text-base font-medium text-zinc-900 dark:text-zinc-100 whitespace-nowrap">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

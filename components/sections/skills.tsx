@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="skills" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
         <h2 className="font-mono text-sm sm:text-base uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-bold">
           Skills &amp; Expertise

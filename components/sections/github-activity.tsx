@@ -42,7 +42,7 @@ export function GitHubActivitySection({
   }, [username]);
 
   return (
-    <section id="github" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="github" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">

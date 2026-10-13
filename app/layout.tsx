@@ -66,7 +66,7 @@ export default function RootLayout({
         "font-sans"
       )}
     >
-      <body className="min-h-full flex flex-col font-sans bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-200 selection:bg-indigo-500/20 selection:text-indigo-600 dark:selection:text-indigo-200">
+      <body className="min-h-full flex flex-col font-sans bg-[#fbf9f1] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-200 selection:bg-indigo-500/20 selection:text-indigo-600 dark:selection:text-indigo-200">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

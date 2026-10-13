@@ -5,7 +5,7 @@ import { ArrowUpRight, BookOpen } from "lucide-react";
 
 export function WritingSection() {
   return (
-    <section id="writing" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="writing" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
         <div className="flex items-baseline justify-between">
           <h2 className="font-mono text-sm sm:text-base uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-bold">
