@@ -36,7 +36,7 @@ export function WritingSection() {
             href={article.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col gap-3 rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-6 transition-all duration-200 hover:border-zinc-400 dark:hover:border-zinc-700 hover:shadow-md shadow-sm"
+            className="group flex flex-col gap-3 rounded-none border border-zinc-200 dark:border-zinc-800/80 bg-transparent p-5 sm:p-6 transition-colors duration-200 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-900/[0.02] dark:hover:bg-white/[0.02]"
             id={`article-${article.id}`}
           >
             <div className="flex items-start justify-between gap-4">
@@ -59,7 +59,7 @@ export function WritingSection() {
                   <Badge
                     key={tag}
                     variant="secondary"
-                    className="font-mono text-xs px-2.5 py-0.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-300 border border-zinc-300 dark:border-zinc-700 font-medium"
+                    className="font-mono text-xs px-2.5 py-0.5 bg-transparent text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 font-medium rounded-none"
                   >
                     {tag}
                   </Badge>

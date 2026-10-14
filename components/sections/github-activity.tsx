@@ -70,45 +70,51 @@ export function GitHubActivitySection({
         <Separator className="w-16 h-0.5 bg-indigo-600 dark:bg-indigo-500" />
       </div>
 
-      {/* GitHub contribution heatmap - dynamically loaded */}
-      <div className="overflow-x-auto rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 p-5 shadow-sm">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`https://ghchart.rshah.org/6366f1/${username}`}
-          alt={`${username}'s live GitHub contribution graph`}
-          className="w-full min-w-[650px] h-auto rounded drop-shadow-sm transition-opacity"
-          loading="lazy"
-        />
+      {/* GitHub contribution heatmap - seamlessly blended with background */}
+      <div className="relative w-full">
+        {/* Soft edge gradient fades for seamless background blending on scroll */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-[#fbf9f1] dark:from-zinc-950 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-[#fbf9f1] dark:from-zinc-950 to-transparent" />
+
+        <div className="overflow-x-auto border border-zinc-200 dark:border-zinc-800/80 bg-transparent p-4 sm:p-5 rounded-none transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`https://ghchart.rshah.org/6366f1/${username}`}
+            alt={`${username}'s live GitHub contribution graph`}
+            className="w-full min-w-[650px] h-auto transition-opacity"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       {/* Stats counters */}
-      <div className="grid grid-cols-3 gap-4">
-        <div className="flex flex-col items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-4 text-center shadow-sm transition-colors hover:border-zinc-400 dark:hover:border-zinc-700">
-          <GitCommit className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+      <div className="grid grid-cols-3 gap-3 sm:gap-4">
+        <div className="flex flex-col items-center gap-1.5 border border-zinc-200 dark:border-zinc-800/80 bg-transparent p-4 text-center rounded-none transition-colors hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-900/[0.02] dark:hover:bg-white/[0.02]">
+          <GitCommit className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
           <span className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-zinc-50 font-heading">
             Live
           </span>
-          <span className="font-mono text-xs uppercase tracking-wider text-zinc-700 dark:text-zinc-400 font-bold">
+          <span className="font-mono text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-semibold">
             Contributions
           </span>
         </div>
 
-        <div className="flex flex-col items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-4 text-center shadow-sm transition-colors hover:border-zinc-400 dark:hover:border-zinc-700">
-          <GitPullRequest className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+        <div className="flex flex-col items-center gap-1.5 border border-zinc-200 dark:border-zinc-800/80 bg-transparent p-4 text-center rounded-none transition-colors hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-900/[0.02] dark:hover:bg-white/[0.02]">
+          <GitPullRequest className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
           <span className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-zinc-50 font-heading">
             {stats.publicRepos !== null ? stats.publicRepos : "18+"}
           </span>
-          <span className="font-mono text-xs uppercase tracking-wider text-zinc-700 dark:text-zinc-400 font-bold">
+          <span className="font-mono text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-semibold">
             Repositories
           </span>
         </div>
 
-        <div className="flex flex-col items-center gap-2 rounded-xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-4 text-center shadow-sm transition-colors hover:border-zinc-400 dark:hover:border-zinc-700">
-          <Flame className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+        <div className="flex flex-col items-center gap-1.5 border border-zinc-200 dark:border-zinc-800/80 bg-transparent p-4 text-center rounded-none transition-colors hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-900/[0.02] dark:hover:bg-white/[0.02]">
+          <Flame className="h-4 w-4 text-amber-600 dark:text-amber-400" />
           <span className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-zinc-50 font-heading">
             Active
           </span>
-          <span className="font-mono text-xs uppercase tracking-wider text-zinc-700 dark:text-zinc-400 font-bold">
+          <span className="font-mono text-xs uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-semibold">
             Streak
           </span>
         </div>

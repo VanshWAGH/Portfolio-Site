@@ -39,7 +39,7 @@ export function ExperienceSection() {
             </div>
 
             {/* Experience details card */}
-            <div className="flex flex-col gap-3 rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-6 w-full shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex flex-col gap-3 rounded-none border border-zinc-200 dark:border-zinc-800/80 bg-transparent p-5 sm:p-6 w-full transition-colors hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-900/[0.02] dark:hover:bg-white/[0.02]">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
                 <div className="flex items-center gap-3">
                   <h3 className="font-heading font-bold text-xl text-zinc-950 dark:text-zinc-50 tracking-tight">

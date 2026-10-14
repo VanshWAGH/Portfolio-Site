@@ -1,14 +1,7 @@
 import Image from "next/image";
-import { Mail, FileText, ArrowRight } from "lucide-react";
+import { FileText, ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
-import {
-  GithubIcon,
-  XIcon,
-  YoutubeIcon,
-  LinkedinIcon,
-  InstagramIcon,
-  HashnodeIcon,
-} from "@/components/icons";
+import { GithubIcon, XIcon, LinkedinIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 export function HeroSection() {
@@ -140,17 +133,6 @@ export function HeroSection() {
             <XIcon className="h-5 w-5" />
           </a>
           <a
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-            title="YouTube"
-            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
-            id="hero-youtube"
-          >
-            <YoutubeIcon className="h-6 w-6" />
-          </a>
-          <a
             href="https://www.linkedin.com/in/vansh-wagh-93a8b6254/"
             target="_blank"
             rel="noopener noreferrer"
@@ -160,37 +142,6 @@ export function HeroSection() {
             id="hero-linkedin"
           >
             <LinkedinIcon className="h-6 w-6" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            title="Instagram"
-            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
-            id="hero-instagram"
-          >
-            <InstagramIcon className="h-6 w-6" />
-          </a>
-          <a
-            href="https://hashnode.com/@vansh31"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Hashnode Blog"
-            title="Hashnode"
-            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
-            id="hero-hashnode"
-          >
-            <HashnodeIcon className="h-6 w-6" />
-          </a>
-          <a
-            href="mailto:waghvansh12@gmail.com"
-            aria-label="Email"
-            title="Email"
-            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
-            id="hero-email"
-          >
-            <Mail className="h-6 w-6" />
           </a>
         </div>
       </div>

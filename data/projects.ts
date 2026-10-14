@@ -7,6 +7,7 @@ export interface Project {
   status: ProjectStatus;
   techStack: string[];
   features: string[];
+  previewImage?: string;
   githubUrl?: string;
   liveUrl?: string;
 }
@@ -36,7 +37,9 @@ export const projects: Project[] = [
       "Human review before generated automation is executed",
       "Traceability from requirement to execution result",
     ],
-    githubUrl: "#",
+    previewImage: "/projects/ai-qe-platform.jpg",
+    githubUrl: "https://github.com/VanshWagh/ai-quality-engineering-platform",
+    liveUrl: "https://ai-qe-platform.vercel.app",
   },
   {
     id: "rag-eval-workbench",
@@ -62,7 +65,9 @@ export const projects: Project[] = [
       "Failure review with traces and retrieved source documents",
       "Regression tests and quality gates for prompts/models",
     ],
-    githubUrl: "#",
+    previewImage: "/projects/rag-eval-workbench.jpg",
+    githubUrl: "https://github.com/VanshWagh/rag-evaluation-workbench",
+    liveUrl: "https://rag-eval-workbench.vercel.app",
   },
   {
     id: "regression-selector",
@@ -81,6 +86,9 @@ export const projects: Project[] = [
       "CI integration",
       "Fallback to full regression suite when confidence is low",
     ],
+    previewImage: "/projects/regression-selector.jpg",
+    githubUrl: "https://github.com/VanshWagh/intelligent-regression-selector",
+    liveUrl: "https://regression-selector.vercel.app",
   },
   {
     id: "reliable-llm-client",
@@ -99,5 +107,8 @@ export const projects: Project[] = [
       "Simulated provider failures",
       "Metrics, logs, and traces",
     ],
+    previewImage: "/projects/reliable-llm-client.jpg",
+    githubUrl: "https://github.com/VanshWagh/reliable-llm-client",
+    liveUrl: "https://reliable-llm-client.vercel.app",
   },
 ];

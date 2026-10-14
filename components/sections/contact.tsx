@@ -1,14 +1,7 @@
 import { Mail, FileText, ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import {
-  GithubIcon,
-  XIcon,
-  YoutubeIcon,
-  LinkedinIcon,
-  InstagramIcon,
-  HashnodeIcon,
-} from "@/components/icons";
+import { GithubIcon, XIcon, LinkedinIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 export function ContactSection() {
@@ -21,7 +14,7 @@ export function ContactSection() {
         <Separator className="w-16 h-0.5 bg-indigo-600 dark:bg-indigo-500" />
       </div>
 
-      <div className="relative overflow-hidden flex flex-col items-center gap-6 rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-gradient-to-b dark:from-zinc-900/60 dark:to-zinc-950/90 p-8 sm:p-12 text-center shadow-md dark:shadow-2xl backdrop-blur-md">
+      <div className="relative overflow-hidden flex flex-col items-center gap-6 rounded-none border border-zinc-200 dark:border-zinc-800/80 bg-transparent p-8 sm:p-12 text-center transition-colors hover:border-zinc-300 dark:hover:border-zinc-700">
         {/* Subtle glow background */}
         <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-48 w-96 bg-indigo-500/10 blur-3xl rounded-full" />
 
@@ -60,17 +53,6 @@ export function ContactSection() {
             <XIcon className="h-5 w-5" />
           </a>
           <a
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-            title="YouTube"
-            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
-            id="contact-youtube"
-          >
-            <YoutubeIcon className="h-6 w-6" />
-          </a>
-          <a
             href="https://www.linkedin.com/in/vansh-wagh-93a8b6254/"
             target="_blank"
             rel="noopener noreferrer"
@@ -81,28 +63,6 @@ export function ContactSection() {
           >
             <LinkedinIcon className="h-6 w-6" />
           </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            title="Instagram"
-            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
-            id="contact-instagram"
-          >
-            <InstagramIcon className="h-6 w-6" />
-          </a>
-          <a
-            href="https://hashnode.com/@vansh31"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Hashnode"
-            title="Hashnode"
-            className="transition-all duration-200 hover:text-zinc-950 dark:hover:text-white hover:scale-110"
-            id="contact-hashnode"
-          >
-            <HashnodeIcon className="h-6 w-6" />
-          </a>
         </div>
 
         {/* Email button & Resume */}
@@ -111,7 +71,7 @@ export function ContactSection() {
             href="mailto:waghvansh12@gmail.com"
             className={cn(
               buttonVariants({ variant: "default", size: "default" }),
-              "gap-2 bg-indigo-600 text-white hover:bg-indigo-500 text-sm font-semibold shadow-md shadow-indigo-600/25 px-5 py-2.5"
+              "gap-2 bg-indigo-600 text-white hover:bg-indigo-500 text-sm font-semibold shadow-md shadow-indigo-600/25 px-5 py-2.5 rounded-none"
             )}
             id="contact-email"
           >
@@ -124,7 +84,7 @@ export function ContactSection() {
             download
             className={cn(
               buttonVariants({ variant: "outline", size: "default" }),
-              "gap-2 border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-950 dark:hover:text-white text-sm font-semibold px-5 py-2.5 shadow-sm"
+              "gap-2 border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-800 dark:text-zinc-200 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-900/[0.03] dark:hover:bg-white/[0.03] hover:text-zinc-950 dark:hover:text-white text-sm font-semibold px-5 py-2.5 rounded-none"
             )}
             id="contact-resume"
           >
