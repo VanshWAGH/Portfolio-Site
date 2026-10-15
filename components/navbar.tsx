@@ -1,33 +1,43 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Writing", href: "#writing" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", type: "hash" as const },
+  { label: "Projects", href: "#projects", type: "hash" as const },
+  { label: "Writing", href: "/writing", type: "page" as const },
+  { label: "Contact", href: "#contact", type: "hash" as const },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
+  const isWritingPage = pathname === "/writing";
 
   useEffect(() => {
+    if (!isHomePage) return;
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = navLinks.map((l) => l.href.slice(1));
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
+      const hashLinks = navLinks
+        .filter((l) => l.type === "hash")
+        .map((l) => l.href.slice(1));
+      for (let i = hashLinks.length - 1; i >= 0; i--) {
+        const el = document.getElementById(hashLinks[i]);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top <= 140) {
-            setActiveSection(sections[i]);
+            setActiveSection(hashLinks[i]);
             break;
           }
         }
@@ -36,46 +46,74 @@ export function Navbar() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
-  const handleNavClick = (
+  const handleHashClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    e.preventDefault();
-    setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (isHomePage) {
+      e.preventDefault();
+      setIsOpen(false);
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
+    // If not on homepage, let the default <a> navigation happen (goes to /#about etc.)
   };
 
   return (
     <nav className="relative w-full z-20 border-b border-zinc-200/60 dark:border-zinc-800/80 bg-[#fbf9f1]/70 dark:bg-zinc-950/60 backdrop-blur-sm transition-colors">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
         {/* Left: Brand Logo */}
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
+        <Link
+          href="/"
+          onClick={() => {
+            if (isHomePage) {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
           }}
           className="group flex items-center gap-1.5 font-mono text-base font-bold text-zinc-950 dark:text-zinc-50 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
         >
           <span className="text-indigo-600 dark:text-indigo-400">~/</span>
           <span>VanshWAGH</span>
-        </a>
+        </Link>
 
         {/* Right Corner: Nav links + Theme Toggle */}
         <div className="hidden items-center gap-6 font-sans md:flex ml-auto">
           <div className="flex items-center gap-6">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.slice(1);
+              const isActive =
+                link.type === "page"
+                  ? pathname === link.href
+                  : isHomePage && activeSection === link.href.slice(1);
+
+              if (link.type === "page") {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "relative py-1 text-sm font-semibold transition-colors",
+                      isActive
+                        ? "text-indigo-600 dark:text-indigo-400 font-bold"
+                        : "text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white"
+                    )}
+                  >
+                    {link.label}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 dark:bg-indigo-400 rounded-full" />
+                    )}
+                  </Link>
+                );
+              }
+
               return (
                 <a
                   key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  href={isHomePage ? link.href : `/${link.href}`}
+                  onClick={(e) => handleHashClick(e, link.href)}
                   className={cn(
                     "relative py-1 text-sm font-semibold transition-colors",
                     isActive
@@ -121,12 +159,37 @@ export function Navbar() {
       >
         <div className="flex flex-col gap-1 px-6 pb-6 pt-2">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.slice(1);
+            const isActive =
+              link.type === "page"
+                ? pathname === link.href
+                : isHomePage && activeSection === link.href.slice(1);
+
+            if (link.type === "page") {
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "py-2 text-sm font-semibold transition-colors",
+                    isActive
+                      ? "text-indigo-600 dark:text-indigo-400 font-bold"
+                      : "text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+
             return (
               <a
                 key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                href={isHomePage ? link.href : `/${link.href}`}
+                onClick={(e) => {
+                  handleHashClick(e, link.href);
+                  setIsOpen(false);
+                }}
                 className={cn(
                   "py-2 text-sm font-semibold transition-colors",
                   isActive

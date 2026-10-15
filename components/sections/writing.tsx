@@ -1,9 +1,13 @@
 import { articles } from "@/data/writing";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowUpRight, BookOpen } from "lucide-react";
+import { ArrowUpRight, BookOpen, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function WritingSection() {
+  // Show only the first 2 articles as a teaser on the homepage
+  const previewArticles = articles.filter((a) => a.featured).slice(0, 2);
+
   return (
     <section id="writing" className="flex flex-col gap-6 scroll-mt-8">
       <div className="flex flex-col gap-2">
@@ -11,16 +15,14 @@ export function WritingSection() {
           <h2 className="font-mono text-sm sm:text-base uppercase tracking-wider text-indigo-700 dark:text-indigo-400 font-bold">
             Technical Writing
           </h2>
-          <a
-            href="https://hashnode.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/writing"
             className="flex items-center gap-1.5 font-mono text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-300 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
             id="writing-view-all"
           >
-            <span>All on Hashnode</span>
+            <span>View all articles</span>
             <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
         <p className="text-base text-zinc-700 dark:text-zinc-300">
           Selected technical articles, architectural breakdowns, and hands-on
@@ -30,7 +32,7 @@ export function WritingSection() {
       </div>
 
       <div className="flex flex-col gap-4">
-        {articles.map((article) => (
+        {previewArticles.map((article) => (
           <a
             key={article.id}
             href={article.url}
@@ -72,6 +74,16 @@ export function WritingSection() {
           </a>
         ))}
       </div>
+
+      {/* CTA to full writing page */}
+      <Link
+        href="/writing"
+        className="group flex items-center justify-center gap-2 border border-zinc-200 dark:border-zinc-800 py-3 font-mono text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors rounded-none"
+        id="writing-see-all-cta"
+      >
+        See all {articles.length} articles
+        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+      </Link>
     </section>
   );
 }

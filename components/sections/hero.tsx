@@ -95,18 +95,10 @@ export function HeroSection() {
           </p>
         </div>
 
-        {/* Bio and Headline */}
-        <div className="flex flex-col gap-2.5 pt-1">
-          <h2 className="text-xl sm:text-2xl font-bold leading-snug text-zinc-950 dark:text-zinc-100">
-            Building AI-powered testing platforms, reliable LLM systems, and
-            evaluation-driven automation tools.
-          </h2>
-          <p className="text-base sm:text-lg leading-relaxed text-zinc-800 dark:text-zinc-300">
-            I work at the intersection of quality engineering, AI automation,
-            backend systems, and developer tooling. Transitioning QA automation into
-            measurable, production-grade AI systems.
-          </p>
-        </div>
+        {/* Bio */}
+        <p className="text-base sm:text-lg leading-relaxed text-zinc-800 dark:text-zinc-200">
+          QA Automation Engineer building AI-powered testing and security-automation frameworks—turning APIs, specs, and business rules into intelligent, production-grade quality gates.
+        </p>
 
         {/* Social links row (Minimal icon style matching reference) */}
         <div className="flex items-center gap-5 sm:gap-6 pt-1 text-zinc-600 dark:text-zinc-400">

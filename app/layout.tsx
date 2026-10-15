@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Vansh Wagh — QA Automation Engineer · AI Systems Builder",
   description:
-    "Building AI-powered testing platforms, reliable LLM systems, and evaluation-driven automation tools. Portfolio of Vansh Wagh.",
+    "QA Automation Engineer building AI-powered testing and security-automation frameworks—turning APIs, specs, and business rules into intelligent, production-grade quality gates.",
   keywords: [
     "Vansh Wagh",
     "QA Automation Engineer",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vansh Wagh — QA Automation Engineer · AI Systems Builder",
     description:
-      "Building AI-powered testing platforms, reliable LLM systems, and evaluation-driven automation tools.",
+      "QA Automation Engineer building AI-powered testing and security-automation frameworks—turning APIs, specs, and business rules into intelligent, production-grade quality gates.",
     type: "website",
   },
 };

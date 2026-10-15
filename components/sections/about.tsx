@@ -22,25 +22,12 @@ export function AboutSection() {
 
       <div className="flex flex-col gap-5 text-base sm:text-lg leading-relaxed text-zinc-800 dark:text-zinc-300">
         <p>
-          I am a QA Automation Engineer with hands-on experience in browser
-          automation, test design, and AI-assisted testing frameworks. I work
-          with{" "}
+          Building AI-powered testing, RAG evaluation, LLM reliability, and
+          agentic automation frameworks using{" "}
           <strong className="text-zinc-950 dark:text-zinc-100 font-bold">
-            Selenium, Playwright, Python, and TypeScript
+            Python, TypeScript, Selenium, and Playwright
           </strong>
-          , designing structured test workflows that scale.
-        </p>
-        <p>
-          I am advancing toward{" "}
-          <strong className="text-zinc-950 dark:text-zinc-100 font-bold">
-            AI Automation Engineer
-          </strong>{" "}
-          and{" "}
-          <strong className="text-zinc-950 dark:text-zinc-100 font-bold">
-            AI Engineer
-          </strong>{" "}
-          roles by engineering practical tools for RAG evaluation, LLM
-          reliability, intelligent test selection, and agentic workflows.
+          .
         </p>
         <blockquote className="rounded-xl border-l-4 border-indigo-600 dark:border-indigo-500 bg-indigo-50/80 dark:bg-zinc-900/60 p-5 text-base sm:text-lg font-medium italic text-zinc-900 dark:text-zinc-200 shadow-sm">
           &ldquo;For me, an AI feature is not complete when it produces an
