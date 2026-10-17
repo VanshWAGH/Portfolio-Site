@@ -97,7 +97,7 @@ export function HeroSection() {
 
         {/* Bio */}
         <p className="text-base sm:text-lg leading-relaxed text-zinc-800 dark:text-zinc-200">
-          QA Automation Engineer building AI-powered testing and security-automation frameworks—turning APIs, specs, and business rules into intelligent, production-grade quality gates.
+          Software Engineer, Currently working at UBS. I build  building AI-powered testing and security-automation frameworks—turning APIs, specs, and business rules into intelligent, production-grade quality gates.
         </p>
 
         {/* Social links row (Minimal icon style matching reference) */}
