@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { LinkedinIcon } from "@/components/icons";
 
 function FeaturedArticleCard({ article }: { article: Article }) {
   return (
@@ -30,6 +31,12 @@ function FeaturedArticleCard({ article }: { article: Article }) {
           <Sparkles className="h-3 w-3" />
           Featured
         </span>
+        {article.platform === "linkedin" && (
+          <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest font-bold text-[#0A66C2]">
+            <LinkedinIcon className="h-3 w-3" />
+            LinkedIn Post
+          </span>
+        )}
       </div>
 
       <div className="flex items-start justify-between gap-4">
@@ -82,7 +89,11 @@ function ArticleCard({ article }: { article: Article }) {
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-3">
-          <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
+          {article.platform === "linkedin" ? (
+            <LinkedinIcon className="h-5 w-5 text-[#0A66C2] flex-shrink-0" />
+          ) : (
+            <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
+          )}
           <h3 className="font-heading font-bold text-base sm:text-lg text-zinc-950 dark:text-zinc-50 leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
             {article.title}
           </h3>
@@ -229,13 +240,14 @@ export function WritingPageContent() {
           {searchQuery && ` matching "${searchQuery}"`}
         </span>
         <a
-          href="https://hashnode.com"
+          href="https://www.linkedin.com/in/vansh-wagh-93a8b6254"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 font-mono text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-300 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
-          id="writing-hashnode-link"
+          className="flex items-center gap-1.5 font-mono text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-300 transition-colors hover:text-[#0A66C2] dark:hover:text-[#0A66C2]"
+          id="writing-linkedin-link"
         >
-          <span>All on Hashnode</span>
+          <LinkedinIcon className="h-4 w-4" />
+          <span>All on LinkedIn</span>
           <ArrowUpRight className="h-4 w-4" />
         </a>
       </div>

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowUpRight, BookOpen, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { LinkedinIcon } from "@/components/icons";
 
 export function WritingSection() {
   // Show only the first 2 articles as a teaser on the homepage
@@ -43,7 +44,11 @@ export function WritingSection() {
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-3">
-                <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
+                {article.platform === "linkedin" ? (
+                  <LinkedinIcon className="h-5 w-5 text-[#0A66C2] flex-shrink-0" />
+                ) : (
+                  <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
+                )}
                 <h3 className="font-heading font-bold text-base sm:text-lg text-zinc-950 dark:text-zinc-50 leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
                   {article.title}
                 </h3>
