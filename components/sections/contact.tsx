@@ -91,9 +91,6 @@ export function Footer() {
       <p>
         © 2026 Vansh Wagh · Pune, India
       </p>
-      <p className="text-zinc-500 dark:text-zinc-500">
-        Built with Next.js, TypeScript &amp; Tailwind CSS
-      </p>
     </footer>
   );
 }
