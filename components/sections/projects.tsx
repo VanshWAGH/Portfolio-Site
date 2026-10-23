@@ -103,10 +103,6 @@ export function ProjectsSection() {
             {projects.length} featured systems
           </span>
         </div>
-        <p className="text-base text-zinc-700 dark:text-zinc-300">
-          Core engineering projects bridging QA automation with production AI
-          systems.
-        </p>
         <Separator className="w-16 h-0.5 bg-indigo-600 dark:bg-indigo-500 rounded-none" />
       </div>
 

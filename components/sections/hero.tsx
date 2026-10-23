@@ -69,10 +69,7 @@ export function HeroSection() {
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-950 dark:text-zinc-50">
               Vansh Wagh
             </h1>
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-300">
-              <span className="h-2 w-2 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse" />
-              Open to opportunities
-            </div>
+
           </div>
 
           <p className="font-mono text-sm sm:text-base font-semibold text-indigo-700 dark:text-indigo-400">
