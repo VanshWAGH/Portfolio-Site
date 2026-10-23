@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Ping Portfolio & Health Check
         run: |
-          TARGET_URL="${{ secrets.SITE_URL || 'https://vanshwagh.vercel.app' }}"
+          TARGET_URL="${{ secrets.SITE_URL || 'https://portfolio-site-pink-mu-99.vercel.app' }}"
           echo "Pinging $TARGET_URL ..."
           curl -f -s -o /dev/null -w "HTTP Status: %{http_code}\nTime Total: %{time_total}s\n" "$TARGET_URL/api/health" || curl -f -s -o /dev/null -w "Fallback HTTP Status: %{http_code}\n" "$TARGET_URL"
