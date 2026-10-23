@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FileText, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { GithubIcon, XIcon, LinkedinIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
@@ -59,18 +59,6 @@ export function HeroSection() {
             >
               View Projects
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
-            <a
-              href="/resume.pdf"
-              download
-              className={cn(
-                buttonVariants({ variant: "outline", size: "default" }),
-                "gap-2 border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm"
-              )}
-              id="hero-resume-cta"
-            >
-              <FileText className="h-4 w-4 text-zinc-700 dark:text-zinc-300" />
-              Download Resume
             </a>
           </div>
         </div>

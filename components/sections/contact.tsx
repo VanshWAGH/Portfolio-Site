@@ -1,4 +1,4 @@
-import { Mail, FileText, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { GithubIcon, XIcon, LinkedinIcon } from "@/components/icons";
@@ -65,7 +65,7 @@ export function ContactSection() {
           </a>
         </div>
 
-        {/* Email button & Resume */}
+        {/* Email button */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
           <a
             href="mailto:waghvansh12@gmail.com"
@@ -78,18 +78,6 @@ export function ContactSection() {
             <Mail className="h-4 w-4" />
             <span>waghvansh12@gmail.com</span>
             <ArrowUpRight className="h-4 w-4 opacity-75" />
-          </a>
-          <a
-            href="/resume.pdf"
-            download
-            className={cn(
-              buttonVariants({ variant: "outline", size: "default" }),
-              "gap-2 border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-800 dark:text-zinc-200 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-900/[0.03] dark:hover:bg-white/[0.03] hover:text-zinc-950 dark:hover:text-white text-sm font-semibold px-5 py-2.5 rounded-none"
-            )}
-            id="contact-resume"
-          >
-            <FileText className="h-4 w-4" />
-            Download Resume
           </a>
         </div>
       </div>
