@@ -12,6 +12,18 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    id: "article-4",
+    title: "Networking Fundamentals: What Happens When You Type a URL?",
+    summary:
+      "A deep dive into the journey behind a single URL request — from DNS lookup, TCP handshake, and TLS encryption to load balancers, caching, client-server protocols (WebSocket, SSE, REST, gRPC), and the evolution of HTTP/1.1 to HTTP/3.",
+    tags: ["Networking", "System Design", "Backend Development", "Software Engineering"],
+    publishDate: "2026-11-01",
+    url: "https://www.linkedin.com/posts/vansh-wagh-93a8b6254_networking-fundamentals-activity-7522519064221552640-Zh2f",
+    readTime: "4 min",
+    featured: true,
+    platform: "linkedin",
+  },
+  {
     id: "article-1",
     title: "Understanding the Full RAG Pipeline",
     summary:
